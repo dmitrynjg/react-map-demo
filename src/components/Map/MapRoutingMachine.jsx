@@ -34,15 +34,15 @@ const createRoutineMachineLayer = ({ coords }) => {
     fitSelectedRoutes: true,
     showAlternatives: true,
     language: 'ru',
-    createMarker: (i, wp, nWps) => {
+    createMarker: (i, wp) => {
       if (i === 0) {
         return L.marker(wp.latLng, {
           icon: fromMarker, 
-        }).bindPopup('Hello');
+        });
       } else {
         return L.marker(wp.latLng, {
           icon: toMarker, 
-        }).bindPopup('Hello');
+        });
       }
     },
   });
