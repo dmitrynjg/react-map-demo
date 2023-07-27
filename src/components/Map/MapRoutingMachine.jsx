@@ -21,7 +21,6 @@ const fromMarker = new L.Icon({
 });
 
 const createRoutineMachineLayer = ({ coords }) => {
-  
   const instance = L.Routing.control({
     waypoints: coords.map((coord) => L.latLng(...coord)),
     lineOptions: {
@@ -29,21 +28,20 @@ const createRoutineMachineLayer = ({ coords }) => {
     },
     show: false,
     addWaypoints: false,
-    routeWhileDragging: true,
-    draggableWaypoints: true,
+    routeWhileDragging: false,
+    draggableWaypoints: false,
     fitSelectedRoutes: true,
-    showAlternatives: true,
+    showAlternatives: false,
     language: 'ru',
     createMarker: (i, wp) => {
       if (i === 0) {
         return L.marker(wp.latLng, {
-          icon: fromMarker, 
-        });
-      } else {
-        return L.marker(wp.latLng, {
-          icon: toMarker, 
+          icon: fromMarker,
         });
       }
+      return L.marker(wp.latLng, {
+        icon: toMarker,
+      });
     },
   });
 
