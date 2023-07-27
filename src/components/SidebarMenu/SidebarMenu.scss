@@ -1,0 +1,30 @@
+.sidebar {
+  height: 100vh;
+  position: sticky;
+  &-container {
+    position: fixed;
+    overflow-y: scroll;
+    height: 100%;
+    &-waypoints {
+      &__item {
+        transition: 0.4s;
+        &--dark {
+          background: #e5e5e545;
+          &:hover {
+            background: #e5e5e545 !important;
+            cursor: auto !important;
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          background: #b0b0b047;
+        }
+      }
+    }
+    &-center {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+  }
+}

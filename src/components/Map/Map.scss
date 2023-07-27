@@ -1,0 +1,41 @@
+.leaflet {
+  &-container {
+    height: 100%;
+  }
+  &-routing {
+    &-container {
+      z-index: 10;
+      background: white;
+      padding: 0 10px;
+    }
+  }
+}
+
+.leaflet {
+  &-routing {
+    &-container {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .leaflet {
+    &-routing {
+      &-container {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .leaflet {
+    &-control {
+      &-zoom {
+        display: none;
+      }
+    }
+  }
+}
